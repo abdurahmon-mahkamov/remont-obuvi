@@ -1,342 +1,774 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#8B4513">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт обуви и одежды в Королёве | Опыт с 2015 года</title>
+    <meta name="description" content="Профессиональный ремонт обуви и одежды в Королёве. Замена набоек, молний, растяжка обуви. Гарантия 30 дней, работаем без выходных.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Ремонт обуви и одежды в Королёве — пр. Королёва, 5Д | Замена молний, набоек, растяжка</title>
-<meta name="description" content="Ремонт обуви и одежды в Королёве на проспекте Королёва, 5Д. Замена набоек, подошвы, молний, растяжка обуви, подгонка одежды. Работаем без выходных, гарантия 30 дней. ☎️ Звоните!">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://remont-obuvi-alpha.vercel.app/">
+        :root {
+            --bg-dark: #0B0E14;
+            --bg-card: #1a1f2e;
+            --border: #2a3142;
+            --text: #F8FAFC;
+            --text-muted: #94a3b8;
+            --accent-cool: #38BDF8;
+            --accent-warm: #F97316;
+            --success: #4FD1C5;
+        }
 
-<meta property="og:title" content="Ремонт обуви и одежды в Королёве — пр. Королёва, 5Д">
-<meta property="og:description" content="Замена набоек, подошвы, молний, растяжка обуви, подгонка одежды. Гарантия 30 дней.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ru_RU">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👞</text></svg>">
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://images.unsplash.com">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-<style>
-:root {
-  --brown:#8B4513; --brown-dark:#5C2E0E; --brown-light:#A0522D;
-  --cream:#FAF6F0; --gray:#6B6B6B; --dark:#1A1A1A;
-  --white:#FFFFFF; --green:#25D366; --blue:#0088CC;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.container{max-width:1140px;margin:0 auto;padding:0 20px}
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
 
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1140px;margin:0 auto;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brown);font-size:15px}
-.logo-icon{font-size:26px}
-nav{display:flex;gap:24px;align-items:center}
-nav a{font-size:14px;color:var(--gray);transition:color .2s}
-nav a:hover{color:var(--brown)}
-.header-phone{font-weight:700;color:var(--brown);font-size:15px;white-space:nowrap}
-.header-phone:hover{color:var(--brown-dark)}
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.hero{position:relative;padding:80px 20px 90px;background:linear-gradient(135deg,#FAF6F0 0%,#F5E6D3 100%);overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1560343090-f0409e92791a?w=1200&q=60');background-size:cover;background-position:center;opacity:.07;z-index:0}
-.hero-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
-.hero-badge{display:inline-block;background:var(--brown);color:white;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:20px}
-.hero h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin-bottom:20px;color:var(--dark);font-weight:800}
-.hero h1 span{color:var(--brown)}
-.hero-sub{font-size:17px;color:var(--gray);margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto}
-.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;border:none;transition:all .2s;white-space:nowrap}
-.btn-primary{background:var(--brown);color:white;box-shadow:0 6px 20px rgba(139,69,19,.28)}
-.btn-primary:hover{background:var(--brown-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,69,19,.35)}
-.btn-outline{background:white;color:var(--brown);border:2px solid var(--brown)}
-.btn-outline:hover{background:var(--brown);color:white;transform:translateY(-2px)}
-.btn-wa{background:var(--green);color:white}
-.btn-wa:hover{background:#1eb856;transform:translateY(-2px)}
-.btn-tg{background:var(--blue);color:white}
-.btn-tg:hover{background:#0077b3;transform:translateY(-2px)}
-.hero-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;max-width:720px;margin:0 auto}
-.hero-feature{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 8px;background:rgba(255,255,255,.75);border-radius:12px;backdrop-filter:blur(6px)}
-.hero-feature-icon{font-size:24px}
-.hero-feature-text{font-size:13px;font-weight:600;color:var(--dark);text-align:center}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-section{padding:70px 20px}
-.section-title{font-size:clamp(24px,3.5vw,34px);font-weight:800;text-align:center;margin-bottom:12px;color:var(--dark)}
-.section-sub{text-align:center;color:var(--gray);margin-bottom:46px;font-size:16px}
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1100px;margin:0 auto}
-.service-card{background:var(--cream);border-radius:14px;padding:26px 22px;border:1px solid #efe6d8;transition:transform .2s,box-shadow .2s}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(139,69,19,.12)}
-.service-icon{font-size:34px;margin-bottom:12px}
-.service-card h3{font-size:18px;margin-bottom:8px;color:var(--dark)}
-.service-card p{font-size:14px;color:var(--gray);margin-bottom:12px}
-.service-price{font-weight:700;color:var(--brown);font-size:15px}
+        .nav-links a:hover {
+            color: var(--accent-cool);
+        }
 
-.prices-table{max-width:720px;margin:0 auto;background:var(--white);border-radius:14px;border:1px solid #efe6d8;overflow:hidden}
-.prices-table .row{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #f0e8db}
-.prices-table .row:last-child{border-bottom:none}
-.prices-table .row:nth-child(even){background:var(--cream)}
-.prices-table .row .price{font-weight:700;color:var(--brown)}
+        .header-cta {
+            background: var(--accent-warm);
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
 
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1100px;margin:0 auto}
-.review-card{background:var(--cream);border-radius:14px;padding:26px 24px;border:1px solid #efe6d8}
-.stars{color:#f5b301;font-size:18px;margin-bottom:12px;letter-spacing:2px}
-.review-text{font-size:14px;color:var(--dark);font-style:italic;margin-bottom:14px}
-.review-author{font-weight:700;font-size:14px;color:var(--brown)}
-.review-source{font-size:12px;color:var(--gray)}
+        .header-cta:hover {
+            background: #ea580c;
+            transform: translateY(-1px);
+        }
 
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1000px;margin:0 auto;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:24px}
-.contact-item{display:flex;gap:16px;align-items:flex-start}
-.contact-item-icon{font-size:26px;line-height:1}
-.contact-item h4{font-size:16px;margin-bottom:4px;color:var(--dark)}
-.contact-item p,.contact-item a{font-size:14px;color:var(--gray)}
-.contact-item a:hover{color:var(--brown)}
-.contact-form{background:var(--white);border-radius:16px;padding:32px;box-shadow:0 10px 30px rgba(139,69,19,.1);border:1px solid #efe6d8}
-.contact-form h3{font-size:22px;margin-bottom:6px;color:var(--dark)}
-.form-sub{font-size:13px;color:var(--gray);margin-bottom:22px}
-.form-group{margin-bottom:16px}
-.form-group input,.form-group textarea{width:100%;padding:14px 16px;border:1.5px solid #e0d6c6;border-radius:10px;font-size:15px;font-family:inherit;transition:border-color .2s;background:var(--white)}
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--brown)}
-.form-group textarea{min-height:90px;resize:vertical}
-.contact-form .btn{width:100%;justify-content:center}
-.form-note{font-size:11px;color:var(--gray);text-align:center;margin-top:12px}
+        /* Hero */
+        .hero {
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-.map-wrap{border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.map-wrap iframe{width:100%;height:380px;border:0;display:block}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
 
-footer{background:var(--dark);color:#bbb;padding:50px 20px 90px}
-.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;max-width:1140px;margin:0 auto}
-footer h4{color:var(--white);font-size:16px;margin-bottom:14px}
-.footer-col{display:flex;flex-direction:column;gap:8px}
-.footer-col a{font-size:14px;color:#aaa;transition:color .2s}
-.footer-col a:hover{color:var(--brown-light)}
-.footer-bottom{max-width:1140px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#888}
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent-cool);
+            margin-bottom: 1.5rem;
+        }
 
-.mobile-cta{position:fixed;bottom:0;left:0;right:0;display:none;gap:10px;padding:12px 16px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid #eee;z-index:200}
-.mobile-cta .btn{flex:1;justify-content:center;padding:12px;font-size:14px}
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
 
-@media(max-width:768px){
-  nav{display:none}
-  .contact-wrap{grid-template-columns:1fr}
-  .mobile-cta{display:flex}
-  footer{padding-bottom:130px}
-  section{padding:50px 20px}
-}
-@media(max-width:420px){.header-phone{font-size:13px}}
-</style>
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-warm);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--accent-cool);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-cool);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-cool);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cool), var(--success));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cool);
+            box-shadow: 0 12px 32px rgba(56, 189, 248, 0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.375rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-warm);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Prices Table */
+        .prices-table {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-row:hover {
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .price-name {
+            font-weight: 500;
+        }
+
+        .price-value {
+            font-weight: 600;
+            color: var(--accent-warm);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.125rem;
+        }
+
+        .review-text {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .review-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .author-source {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Contacts */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 1.25rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .contact-value a {
+            color: var(--accent-cool);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent-warm);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .map-placeholder {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .services-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                👞 Ремонт обуви и одежды
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="tel:+79162299062" class="header-cta">📞 +7 (916) 229-90-62</a>
+        </nav>
+    </header>
 
-<header>
-<div class="header-inner">
-  <div class="logo"><span class="logo-icon">👞</span>Ремонт обуви и одежды</div>
-  <nav>
-    <a href="#services">Услуги</a>
-    <a href="#prices">Цены</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
-  <a href="tel:+79162299062" class="header-phone">📞 +7 (916) 229-90-62</a>
-</div>
-</header>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">
+                ⭐ Опыт с 2015 года
+            </div>
+            <h1>Ремонт обуви и одежды<br>в Королёве</h1>
+            <p class="hero-subtitle">
+                Замена набоек, подошвы, молний, растяжка обуви и подгонка одежды. Работаем без выходных, гарантия 30 дней.
+            </p>
+            <div class="cta-group">
+                <a href="tel:+79162299062" class="btn btn-primary">📞 Позвонить</a>
+                <a href="https://wa.me/79162299062" class="btn btn-secondary">💬 WhatsApp</a>
+                <a href="https://t.me/abdurakhmonmuslim" class="btn btn-secondary">✈️ Telegram</a>
+            </div>
 
-<section class="hero">
-<div class="hero-inner">
-  <span class="hero-badge">⭐ Опыт с 2015 года</span>
-  <h1>Ремонт обуви и одежды <span>в Королёве</span></h1>
-  <p class="hero-sub">Замена набоек, подошвы, молний, растяжка обуви и подгонка одежды. Работаем без выходных, гарантия 30 дней.</p>
-  <div class="hero-actions">
-    <a href="tel:+79162299062" class="btn btn-primary">📞 Позвонить</a>
-    <a href="https://wa.me/79162299062" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp</a>
-    <a href="https://t.me/abdurakhmonmuslim" target="_blank" rel="noopener" class="btn btn-tg">✈️ Telegram</a>
-  </div>
-  <div class="hero-features">
-    <div class="hero-feature"><div class="hero-feature-icon">⚡</div><div class="hero-feature-text">Ремонт за 1 день</div></div>
-    <div class="hero-feature"><div class="hero-feature-icon">🛡</div><div class="hero-feature-text">Гарантия 30 дней</div></div>
-    <div class="hero-feature"><div class="hero-feature-icon">💰</div><div class="hero-feature-text">Бесплатная оценка</div></div>
-    <div class="hero-feature"><div class="hero-feature-icon">📍</div><div class="hero-feature-text">В центре города</div></div>
-  </div>
-</div>
-</section>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>Ремонт за 1 день</h3>
+                        <p>Быстрое выполнение</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡</div>
+                    <div class="feature-text">
+                        <h3>Гарантия 30 дней</h3>
+                        <p>На все виды работ</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">
+                        <h3>Бесплатная оценка</h3>
+                        <p>Осмотр без оплаты</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-text">
+                        <h3>В центре города</h3>
+                        <p>Удобное расположение</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="services" style="background:var(--white)">
-<div class="container">
-  <h2 class="section-title">Наши услуги</h2>
-  <p class="section-sub">Ремонтируем любую обувь, одежду и аксессуары</p>
-  <div class="services-grid">
-    <div class="service-card"><div class="service-icon">👞</div><h3>Ремонт обуви</h3><p>Замена набоек, подошвы, каблуков, прошивка.</p><div class="service-price">от 400 ₽</div></div>
-    <div class="service-card"><div class="service-icon">🧵</div><h3>Замена молний</h3><p>Куртки, брюки, сапоги, сумки — любые молнии.</p><div class="service-price">от 500 ₽</div></div>
-    <div class="service-card"><div class="service-icon">👗</div><h3>Ремонт одежды</h3><p>Укорачивание, подгонка по фигуре, замена фурнитуры.</p><div class="service-price">от 550 ₽</div></div>
-    <div class="service-card"><div class="service-icon">👜</div><h3>Ремонт сумок</h3><p>Ручки, швы, фурнитура, молнии на сумках.</p><div class="service-price">от 300 ₽</div></div>
-    <div class="service-card"><div class="service-icon">📏</div><h3>Растяжка обуви</h3><p>Разносим жмущую обувь до комфортного состояния.</p><div class="service-price">от 400 ₽</div></div>
-    <div class="service-card"><div class="service-icon">✨</div><h3>Клининг обуви</h3><p>Чистка, покраска, восстановление цвета и вида.</p><div class="service-price">от 500 ₽</div></div>
-  </div>
-</div>
-</section>
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Услуги</div>
+                <h2>Наши услуги</h2>
+                <p class="section-subtitle">Ремонтируем любую обувь, одежду и аксессуары</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👞</div>
+                    <h3>Ремонт обуви</h3>
+                    <p>Замена набоек, подошвы, каблуков, прошивка.</p>
+                    <div class="service-price">от 400 ₽</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧵</div>
+                    <h3>Замена молний</h3>
+                    <p>Куртки, брюки, сапоги, сумки — любые молнии.</p>
+                    <div class="service-price">от 500 ₽</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👗</div>
+                    <h3>Ремонт одежды</h3>
+                    <p>Укорачивание, подгонка по фигуре, замена фурнитуры.</p>
+                    <div class="service-price">от 550 ₽</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👜</div>
+                    <h3>Ремонт сумок</h3>
+                    <p>Ручки, швы, фурнитура, молнии на сумках.</p>
+                    <div class="service-price">от 300 ₽</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📏</div>
+                    <h3>Растяжка обуви</h3>
+                    <p>Разносим жмущую обувь до комфортного состояния.</p>
+                    <div class="service-price">от 400 ₽</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="prices" style="background:var(--cream)">
-<div class="container">
-  <h2 class="section-title">Цены</h2>
-  <p class="section-sub">Точную стоимость назовём после осмотра — бесплатно</p>
-  <div class="prices-table">
-    <div class="row"><span>Замена набойки (пара)</span><span class="price">500–800 ₽</span></div>
-    <div class="row"><span>Замена каблука</span><span class="price">700–1200 ₽</span></div>
-    <div class="row"><span>Замена молнии в куртке</span><span class="price">700–1400 ₽</span></div>
-    <div class="row"><span>Замена молнии в брюках</span><span class="price">500–900 ₽</span></div>
-    <div class="row"><span>Растяжка обуви</span><span class="price">400–600 ₽</span></div>
-    <div class="row"><span>Укорачивание брюк</span><span class="price">550–800 ₽</span></div>
-    <div class="row"><span>Прошивка подошвы</span><span class="price">600–1100 ₽</span></div>
-    <div class="row"><span>Клепка / установка заклёпок</span><span class="price">от 100 ₽</span></div>
-  </div>
-</div>
-</section>
+    <!-- Prices -->
+    <section id="prices">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Цены</div>
+                <h2>Цены</h2>
+                <p class="section-subtitle">Точную стоимость назовём после осмотра — бесплатно</p>
+            </div>
+            <div class="prices-table">
+                <div class="price-row">
+                    <div class="price-name">Замена набойки (пара)</div>
+                    <div class="price-value">500–800 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Замена каблука</div>
+                    <div class="price-value">700–1200 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Замена молнии в куртке</div>
+                    <div class="price-value">700–1400 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Замена молнии в брюках</div>
+                    <div class="price-value">500–900 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Растяжка обуви</div>
+                    <div class="price-value">400–600 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Укорачивание брюк</div>
+                    <div class="price-value">550–800 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Прошивка подошвы</div>
+                    <div class="price-value">600–1100 ₽</div>
+                </div>
+                <div class="price-row">
+                    <div class="price-name">Клепка / установка заклёпок</div>
+                    <div class="price-value">от 100 ₽</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="reviews" style="background:white">
-<div class="container">
-  <h2 class="section-title">Отзывы наших клиентов</h2>
-  <p class="section-sub">Более 47 довольных клиентов за последний год</p>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">«Заменили молнию на зимней куртке за 2 часа. Работа аккуратная, нитки в цвет. Рекомендую!»</p>
-      <div class="review-author">Анна К.</div>
-      <div class="review-source">Яндекс.Карты</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">«Растянули новые туфли — жали страшно. Теперь как влитые. Мастер вежливый, всё объяснил.»</p>
-      <div class="review-author">Дмитрий Л.</div>
-      <div class="review-source">2ГИС</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">«Постоянно тут ремонтирую обувь. Качество стабильно высокое, цены не завышают. Хожу уже 3 года.»</p>
-      <div class="review-author">Марина В.</div>
-      <div class="review-source">Яндекс.Карты</div>
-    </div>
-  </div>
-</div>
-</section>
+    <!-- Reviews -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Отзывы</div>
+                <h2>Отзывы наших клиентов</h2>
+                <p class="section-subtitle">Более 47 довольных клиентов за последний год</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">«Заменили молнию на зимней куртке за 2 часа. Работа аккуратная, нитки в цвет. Рекомендую!»</p>
+                    <div class="review-author">
+                        <div class="author-name">Анна К.</div>
+                        <div class="author-source">Яндекс.Карты</div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">«Растянули новые туфли — жали страшно. Теперь как влитые. Мастер вежливый, всё объяснил.»</p>
+                    <div class="review-author">
+                        <div class="author-name">Дмитрий Л.</div>
+                        <div class="author-source">2ГИС</div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">«Постоянно тут ремонтирую обувь. Качество стабильно высокое, цены не завышают. Хожу уже 3 года.»</p>
+                    <div class="review-author">
+                        <div class="author-name">Марина В.</div>
+                        <div class="author-source">Яндекс.Карты</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contacts" style="background:var(--cream)">
-<div class="container">
-  <h2 class="section-title">Контакты и адрес</h2>
-  <p class="section-sub">Приходите или оставьте заявку — перезвоним в течение 15 минут</p>
-  <div class="contact-wrap">
-    <div class="contact-info">
-      <div class="contact-item"><div class="contact-item-icon">📍</div><div class="contact-item-content"><h4>Адрес</h4><p>г. Королёв, проспект Королёва, 5Д</p></div></div>
-      <div class="contact-item"><div class="contact-item-icon">📞</div><div class="contact-item-content"><h4>Телефон</h4><a href="tel:+79162299062">+7 (916) 229-90-62</a></div></div>
-      <div class="contact-item"><div class="contact-item-icon">🕒</div><div class="contact-item-content"><h4>Часы работы</h4><p>Пн–Вс: 9:00–19:00</p></div></div>
-      <div class="contact-item"><div class="contact-item-icon">💬</div><div class="contact-item-content"><h4>Мессенджеры</h4><p><a href="https://wa.me/79162299062" target="_blank" rel="noopener" style="color:var(--green)">WhatsApp</a> · <a href="https://t.me/abdurakhmonmuslim" target="_blank" rel="noopener" style="color:var(--blue)">Telegram</a></p></div></div>
-    </div>
+    <!-- Contacts -->
+    <section id="contacts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Контакты</div>
+                <h2>Контакты и адрес</h2>
+                <p class="section-subtitle">Приходите или оставьте заявку — перезвоним за 5 минут</p>
+            </div>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-label">Телефон</div>
+                        <div class="contact-value">
+                            <a href="tel:+79162299062">+7 (916) 229-90-62</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Режим работы</div>
+                        <div class="contact-value">Без выходных, 9:00 – 20:00</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-label">Адрес</div>
+                        <div class="contact-value">г. Королёв, центр города</div>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/79162299062" class="btn btn-secondary">💬 Написать в WhatsApp</a>
+                        <a href="https://t.me/abdurakhmonmuslim" class="btn btn-secondary">✈️ Написать в Telegram</a>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    📍 Карта (интегрируйте Яндекс.Карты или 2GIS)
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <form class="contact-form" id="leadForm">
-      <h3>Оставить заявку</h3>
-      <p class="form-sub">Перезвоним в течение 15 минут и уточним детали</p>
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Ваше имя" required autocomplete="name">
-      </div>
-      <div class="form-group">
-        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
-      </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Что нужно отремонтировать?"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Отправить заявку</button>
-      <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-    </form>
-  </div>
-</div>
-</section>
-
-<section style="background:white;padding-top:20px">
-<div class="container">
-  <div class="map-wrap">
-    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.8255%2C55.9141&amp;z=17&amp;pt=37.8255,55.9141,pm2rdm" loading="lazy" title="Карта — Ремонт обуви в Королёве, проспект Королёва, 5Д" allowfullscreen></iframe>
-  </div>
-</div>
-</section>
-
-<footer>
-<div class="footer-inner">
-  <div class="footer-col">
-    <h4>👞 Ремонт обуви в Королёве</h4>
-    <p style="color:#999;font-size:13px">Профессиональный ремонт обуви, одежды и сумок с 2015 года.</p>
-  </div>
-  <div class="footer-col">
-    <h4>Навигация</h4>
-    <a href="#services">Услуги</a>
-    <a href="#prices">Цены</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#contacts">Контакты</a>
-  </div>
-  <div class="footer-col">
-    <h4>Контакты</h4>
-    <a href="tel:+79162299062">+7 (916) 229-90-62</a>
-    <a href="https://wa.me/79162299062" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://t.me/abdurakhmonmuslim" target="_blank" rel="noopener">Telegram</a>
-  </div>
-</div>
-<div class="footer-bottom">
-  <span>© 2015–2026 Ремонт обуви и одежды, Королёв</span>
-  <span>пр. Королёва, 5Д · +7 (916) 229-90-62</span>
-</div>
-</footer>
-
-<div class="mobile-cta">
-  <a href="tel:+79162299062" class="btn btn-primary">📞 Позвонить</a>
-  <a href="https://t.me/abdurakhmonmuslim" target="_blank" rel="noopener" class="btn btn-tg">✈️ Telegram</a>
-  <a href="https://wa.me/79162299062" target="_blank" rel="noopener" class="btn btn-wa">💬 WA</a>
-</div>
-
-<script>
-(function(){
-  const form = document.getElementById('leadForm');
-  const TELEGRAM_TOKEN = 8618340424:AAFfnYAPRNuOEIby4kpSYxLkoH4ZfpvpxwI;   
-  const CHAT_ID = 8618340424;             
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    const name = form.querySelector('[name="name"]').value.trim();
-    const phone = form.querySelector('[name="phone"]').value.trim();
-    const message = form.querySelector('[name="message"]').value.trim();
-
-    if(!phone){
-      alert('Пожалуйста, укажите телефон');
-      return;
-    }
-
-    const text = '📩 Новая заявка с сайта\n' +
-      '👤 Имя: ' + name + '\n' +
-      '📞 Телефон: ' + phone + '\n' +
-      (message ? '📝 Сообщение: ' + message + '\n' : '') +
-      '🕒 Время: ' + new Date().toLocaleString('ru-RU');
-
-    fetch('https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: 'HTML' })
-    })
-    .then(r => r.json())
-    .then(data => {
-      if(data.ok){
-        form.reset();
-        alert('Спасибо! Заявка отправлена. Мы перезвоним в течение 15 минут.');
-      } else {
-        alert('Ошибка отправки. Попробуйте ещё раз или позвоните нам.');
-      }
-    })
-    .catch(() => alert('Ошибка сети. Попробуйте позже.'));
-  });
-})();
-</script>
-
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    © 2024 Ремонт обуви и одежды в Королёве. Все права защищены.
+                </div>
+                <div class="footer-text">
+                    ИП Мастер | ОГРНИП: 000000000000000
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
